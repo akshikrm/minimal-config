@@ -121,9 +121,6 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		opts.desc = "Rename"
 		keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
-		opts.desc = "Diagnostics"
-		keymap.set("n", "<leader>ed", vim.diagnostic.open_float, opts)
-
 		opts.desc = "Hover"
 		keymap.set("n", "K", vim.lsp.buf.hover, opts)
 
@@ -132,6 +129,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		opts.desc = "Workspace Symbol"
 		keymap.set("n", "<leader>ws", vim.lsp.buf.workspace_symbol, opts)
+
+		opts.desc = "Signature help"
+		keymap.set("n", "<leader>sh", vim.lsp.buf.signature_help, opts)
+
+		opts.desc = "Add Diagnostic to local list"
+		keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
 
 		opts.desc = "Code Actions"
 		keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
